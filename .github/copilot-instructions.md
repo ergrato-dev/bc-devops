@@ -137,3 +137,4 @@ week-XX-nombre_del_tema/
 
 - **NO usar procesamiento paralelo:** Ejecutar las tool calls una por una de forma secuencial.
 - **Respuestas divididas (Regla de Oro):** SIEMPRE dividir respuestas que generen mucho código o contenido en múltiples partes para evitar sobrepasar límites de tokens. Terminar una sección y pedir confirmación al usuario antes de proceder a la siguiente.
+- **Un archivo por vez:** El editor debe tener abierto únicamente el archivo en el que se está trabajando activamente. Cerrar los archivos anteriores antes de abrir uno nuevo, por optimización de recursos del sistema.
