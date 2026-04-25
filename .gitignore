@@ -1,0 +1,238 @@
+# ============================================================
+# .gitignore — Bootcamp DevOps Zero to Hero
+# ============================================================
+
+# ============================================================
+# TERRAFORM
+# ============================================================
+
+# Directorio de estado y caché local
+.terraform/
+.terraform.lock.hcl
+
+# Archivos de estado — NUNCA commitear (contienen secretos e IDs)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Variables con credenciales y valores sensibles
+*.tfvars
+*.tfvars.json
+# Excepción: archivos de ejemplo sin valores reales
+!*.tfvars.example
+
+# Archivos de plan (pueden contener valores sensibles)
+*.tfplan
+tfplan
+
+# Override files (uso local, no compartible)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash log de Terraform
+crash.log
+crash.*.log
+
+# ============================================================
+# DOCKER
+# ============================================================
+
+# Contextos de build temporales
+.dockerignore.local
+
+# Imágenes exportadas
+*.tar
+*.tar.gz
+
+# ============================================================
+# KUBERNETES
+# ============================================================
+
+# kubeconfig — contiene tokens y credenciales de clúster
+kubeconfig
+kubeconfig.yaml
+kubeconfig.yml
+*.kubeconfig
+
+# Outputs de kubectl con tokens
+*-token.yaml
+*-secret-decoded.yaml
+
+# Helm — charts descargados por dependencias
+charts/
+
+# ============================================================
+# SECRETS & CREDENTIALS
+# ============================================================
+
+# Variables de entorno con secretos
+.env
+.env.local
+.env.*.local
+.envrc
+
+# Archivos de secretos genéricos
+*.secret
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets.yaml
+secrets.yml
+credentials.json
+credentials.yaml
+service-account.json
+
+# AWS
+.aws/credentials
+.aws/config
+
+# GCP
+*-service-account.json
+application_default_credentials.json
+
+# Vault tokens
+.vault-token
+
+# SSH keys
+id_rsa
+id_ed25519
+*.pub
+!*.pub.example
+
+# ============================================================
+# SISTEMA OPERATIVO
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.Trash-*
+
+# ============================================================
+# EDITORES
+# ============================================================
+
+# VS Code — conservar configuración compartida del repo
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (IntelliJ, GoLand, etc.)
+.idea/
+*.iml
+
+# Vim / Neovim
+*.swp
+*.swo
+*.swn
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# ============================================================
+# PYTHON (scripts de automatización / Ansible)
+# ============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ============================================================
+# NODE.JS (herramientas de frontend en proyectos de prueba)
+# ============================================================
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+.pnpm-store/
+package-lock.json
+yarn.lock
+
+# ============================================================
+# GO (herramientas CLI del ecosistema DevOps)
+# ============================================================
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# ============================================================
+# ARCHIVOS TEMPORALES Y LOGS
+# ============================================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+_export/
+_output/
+dist/
+
+# Logs de herramientas DevOps
+terraform.log
+ansible.log
+packer.log
+
+# ============================================================
+# OBSERVABILIDAD — DATOS LOCALES
+# ============================================================
+
+# Datos de Prometheus local
+prometheus-data/
+prometheus_data/
+
+# Datos de Grafana local
+grafana-data/
+grafana_data/
+
+# Datos de Loki local
+loki-data/
+loki_data/
+
+# ============================================================
+# KIND / MINIKUBE (clústeres locales)
+# ============================================================
+.minikube/
+.kind/
+
+# ============================================================
+# TRABAJO EN PROGRESO DEL APRENDIZ
+# ============================================================
+# Las entregas van en los forks personales del aprendiz.
+# Si alguien trabaja en copia local sin fork:
+homework/
+entregables/
+mi-dominio/
+
+# ============================================================
+# MATERIAL EXCLUSIVO DEL INSTRUCTOR
+# ============================================================
+# Demos y soluciones internas — no exponer a aprendices.
+*6-instructor/
